@@ -1,14 +1,11 @@
 package com.epiuse.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@MappedSuperclass
-public class PayGroupBase implements IPayGroup{
+@Entity()
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class PayGroupBase implements IPayGroup {
 
-    @Id
     long id;
 
     String name;
@@ -21,6 +18,7 @@ public class PayGroupBase implements IPayGroup{
         this.name = name;
     }
 
+    @Id
     public long getId() {
         return id;
     }
@@ -36,4 +34,5 @@ public class PayGroupBase implements IPayGroup{
     public void setName(String name) {
         this.name = name;
     }
+
 }

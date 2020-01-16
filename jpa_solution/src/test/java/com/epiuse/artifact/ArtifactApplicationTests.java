@@ -2,7 +2,6 @@ package com.epiuse.artifact;
 
 import com.epiuse.datasource.DBDetails;
 import com.epiuse.datasource.DbContextHolder;
-import com.epiuse.models.PayGroupBase;
 import com.epiuse.models.vantage.PayGroup;
 import com.epiuse.repository.PayGroupRepository;
 import org.junit.jupiter.api.Test;
@@ -24,7 +23,7 @@ import org.springframework.util.Assert;
 class ArtifactApplicationTests {
 
     @Autowired
-    PayGroupRepository payGroupRepository;
+    PayGroupRepository<PayGroup> payGroupRepository;
 
     @Autowired
     private PlatformTransactionManager transactionManager; // Hierdie is belangrik

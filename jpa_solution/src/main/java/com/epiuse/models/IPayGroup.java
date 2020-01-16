@@ -1,15 +1,15 @@
 package com.epiuse.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
-@Entity
 public interface IPayGroup {
-    @Id
-    long id = 0;
 
-    String name = null;
+    @Id
+    long getId();
+
+    void setId(long id);
+
+    void setName(String name);
 
     String getName();
 
